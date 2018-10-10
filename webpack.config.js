@@ -2,12 +2,25 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/main.js',
-  output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js'
-  },
+    context: path.join(__dirname, '/src/js'),
+    entry: {
+        'app': './main',
+    },
+    output: {
+        path: path.join(__dirname, '/public/dist/js'),
+        filename: 'build.js',
+        publicPath: "public"
+    },
+  plugins: [
+        new webpack.ProvidePlugin({
+            Vue: 'vue/dist/vue.js',
+            VueRouter: ['vue-router', 'default'],
+            axios: 'axios',
+            moment: 'moment',
+            localstorage: 'lscache',
+            async: 'async'
+        })
+    ],
   module: {
     rules: [
       {
@@ -76,6 +89,7 @@ module.exports = {
     extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
+    contentBase: path.join(__dirname, 'public'),
     historyApiFallback: true,
     noInfo: true,
     overlay: true
