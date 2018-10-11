@@ -21,7 +21,7 @@
     import './../js/functions.js';
     export default {
         props: ['weather'],
-        data:{},
+        data(){ return {}},
         computed: {
             weatherData()
             {
