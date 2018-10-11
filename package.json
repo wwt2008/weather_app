@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "dev": "cross-env NODE_ENV=development webpack",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "gulp": "gulp styles"
   },
@@ -37,12 +37,12 @@
     "gulp-concat": "^2.6.1",
     "gulp-livereload": "^4.0.0",
     "gulp-sass": "^4.0.1",
+    "manage-htaccess": "^1.0.0",
     "node-sass": "^4.5.3",
     "path": "^0.12.7",
     "sass-loader": "^6.0.6",
     "vue-loader": "^13.7.3",
     "vue-template-compiler": "^2.5.17",
-    "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.1"
+    "webpack": "^3.8.1"
   }
 }
